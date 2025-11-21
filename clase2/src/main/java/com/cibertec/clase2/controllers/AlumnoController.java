@@ -35,25 +35,25 @@ public class AlumnoController {
         alumnos.add(new Alumno("Diego", "Berrio4"));
         model.addAttribute("alumnos", alumnos);
         // int, double, boolean, char, Integer, Double, Boolean, String
-        return "index";
+        return "alumnos/index";
     }
 
     @GetMapping("/alumnos")
     public String getAllAlumnos(Model model) {
         model.addAttribute("alumnos", alumnoService.findAll());
-        return "alumnos";
+        return "alumnos/alumnos";
     }
 
     @GetMapping("/nuevo")
     public String nuevoAlumno(Model model) {
         model.addAttribute("alumno", new Alumno());
         model.addAttribute("carreras", carreraService.findAll()); //Agregamos la información de las carreras
-        return "nuevoAlumno";
+        return "alumnos/nuevoAlumno";
     }
 
     @PostMapping("/save")
     public String guardarAlumno(@ModelAttribute Alumno alumno) {
         alumnoService.save(alumno);
-        return "redirect:/alumnos";
+        return "redirect:/alumnos/alumnos";
     }
 }

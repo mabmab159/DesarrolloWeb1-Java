@@ -19,7 +19,7 @@ public class CarreraController {
     @GetMapping("/listar")
     public String listar(Model model){
         model.addAttribute("carreras", carreraService.findAll());
-        return "listar";
+        return "carreras/listar";
     }
 
 }
