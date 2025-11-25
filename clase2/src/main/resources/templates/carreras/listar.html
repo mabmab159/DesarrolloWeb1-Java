@@ -9,6 +9,12 @@
 <body>
 <div>
     <h1>Listado de carreras</h1>
+
+    <form th:action="@{/carrera/listar}" method="get">
+        <input type="text" name="keyword" th:value="${keyword}" placeholder="Ingrese la carrera"/>
+        <button type="submit">Buscar</button>
+    </form>
+
     <p>Este es el listado de las carreras disponibles</p>
     <table>
         <thead>

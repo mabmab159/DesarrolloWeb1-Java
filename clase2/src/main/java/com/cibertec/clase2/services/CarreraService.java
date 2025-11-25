@@ -15,4 +15,8 @@ public class CarreraService {
     public Iterable<Carrera> findAll() {
         return carreraRepository.findAll();
     }
+
+    public Iterable<Carrera> findByCarrera(String carrera) {
+        return carreraRepository.findByNombreCarreraContainingIgnoreCase(carrera);
+    }
 }
