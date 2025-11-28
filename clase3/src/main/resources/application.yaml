@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: clase3
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydatabase
+    username: ${username}
+    password: ${password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
