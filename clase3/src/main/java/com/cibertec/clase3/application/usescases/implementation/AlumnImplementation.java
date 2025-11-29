@@ -15,12 +15,17 @@ public class AlumnImplementation implements IAlumnInterface {
     private final IAlumnService iAlumnService;
 
     @Override
-    public List<?> getAllAlumns() {
+    public List<AlumnResponse> getAllAlumns() {
         return iAlumnService.getAllAlumnsServices();
     }
 
     @Override
     public AlumnResponse saveAlumn(AlumnRequest alumnRequest) {
         return iAlumnService.saveAlumnServices(alumnRequest);
+    }
+
+    @Override
+    public AlumnResponse getAlumnById(Long id) {
+        return iAlumnService.getAlumnByIdServices(id);
     }
 }

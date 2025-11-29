@@ -6,7 +6,9 @@ import com.cibertec.clase3.application.usescases.dto.response.AlumnResponse;
 import java.util.List;
 
 public interface IAlumnInterface {
-    List<?> getAllAlumns();
+    List<AlumnResponse> getAllAlumns();
 
     AlumnResponse saveAlumn(AlumnRequest alumnRequest);
+
+    AlumnResponse getAlumnById(Long id);
 }

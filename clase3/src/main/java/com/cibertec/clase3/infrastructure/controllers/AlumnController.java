@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/alumn")
 @RequiredArgsConstructor
@@ -15,8 +17,14 @@ public class AlumnController {
     private final IAlumnInterface alumnInterface;
 
     @GetMapping("/list")
-    public ResponseEntity<?> listAllAlumns() {
+    public ResponseEntity<List<AlumnResponse>> listAllAlumns() {
         return ResponseEntity.ok(alumnInterface.getAllAlumns());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<AlumnResponse> getAlumnById(@PathVariable String id) {
+        Long idAlumn = Long.parseLong(id);
+        return ResponseEntity.ok(alumnInterface.getAlumnById(idAlumn));
     }
 
     @PostMapping("/save")
