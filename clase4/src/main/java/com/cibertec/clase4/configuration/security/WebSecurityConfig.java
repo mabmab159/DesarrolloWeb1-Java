@@ -20,7 +20,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth ->
-                        auth.requestMatchers(HttpMethod.GET, "/**").permitAll()
+                        auth.requestMatchers(HttpMethod.POST, "/login").permitAll()
                                 .anyRequest().authenticated())
                 .addFilterAfter(authorizationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();

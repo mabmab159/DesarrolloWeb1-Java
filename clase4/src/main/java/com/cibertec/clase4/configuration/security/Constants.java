@@ -12,8 +12,8 @@ public class Constants {
     public static final String TOKEN_BEARER_PREFIX = "Bearer ";
 
     // JWT
-    public static final String SUPER_SECRET_KEY= "Miguel";
-    public static final Long TOKEN_EXPIRATION_TIME = 300_000L ;  //ms
+    public static final String SUPER_SECRET_KEY = "b4df1a9e8c7d2f45e6b1c9a0f3e7d6c2a1b4d5e6f7c8a9b0c1d2e3f4a5b6c7d8";
+    public static final Long TOKEN_EXPIRATION_TIME = 300_000L;  //ms
 
     public static Key getSigningKeyB64(String secretKey) {
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);

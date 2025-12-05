@@ -54,5 +54,8 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             response.sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
         }
+
+        //Indica a Spring que continue con los demas filtros
+        chain.doFilter(request, response);
     }
 }
