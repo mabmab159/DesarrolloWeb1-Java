@@ -9,16 +9,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AlumnRequest {
-    @Pattern(regexp = "^[A-Za-z][0-9]{8,10}$")
+    //@Pattern(regexp = "^[A-Za-z][0-9]{8,10}$")
     private String codigoAlumno;
-    @NotNull(message = "Name is required")
+    //@NotNull(message = "Name is required")
     private String name;
-    @NotNull(message = "Surname is required")
+    //@NotNull(message = "Surname is required")
     private String surname;
-    @Email
+    //@Email
     private String email;
-    @Min(9)
+    //@Min(9)
     private String phone;
-    @Max(256)
+    //@Max(256)
     private String address;
 }

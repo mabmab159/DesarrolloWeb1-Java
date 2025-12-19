@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/alumn")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class AlumnController {
     private final IAlumnInterface alumnInterface;
 
