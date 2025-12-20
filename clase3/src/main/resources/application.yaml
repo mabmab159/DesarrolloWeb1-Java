@@ -2,9 +2,9 @@ spring:
   application:
     name: clase3
   datasource:
-    url: jdbc:mysql://localhost:3306/mydatabase
-    username: ${username}
-    password: ${password}
+    url: jdbc:mysql://mysql:3306/mydatabase?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: myuser
+    password: secret
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: false

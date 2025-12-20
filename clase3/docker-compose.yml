@@ -1,0 +1,38 @@
+services:
+  mysql:
+    container_name: 'mysql'
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=mydatabase'
+      - 'MYSQL_PASSWORD=secret'
+      - 'MYSQL_ROOT_PASSWORD=verysecret'
+      - 'MYSQL_USER=myuser'
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - cibertec
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: clase3-app
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - '8080:8080'
+    networks:
+      - cibertec
+
+volumes:
+  mysql_data:
+
+networks:
+  cibertec:
+    name: cibertec-network
